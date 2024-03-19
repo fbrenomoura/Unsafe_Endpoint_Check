@@ -11,7 +11,7 @@ Also this gate helps to protect your code against API2:2023 - Broken Authenticat
 - **HTML Report Generation**: Detailed HTML report generation summarizing endpoint statuses.
 
 ## Prerequisites
-- `bash`: Ensure that your system supports Bash scripting. The `EndpointSafeGate` relies on Bash scripts for execution.
+- `bash`: Ensure that your system supports Bash scripting. The `Unsafe Endpoint Check` relies on Bash scripts for execution.
 - `curl`: Required for HTTP request handling.
 - Read and write permissions.
 - Internet connection.
