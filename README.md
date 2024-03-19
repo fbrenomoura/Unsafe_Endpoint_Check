@@ -22,11 +22,11 @@ Also this gate helps to protect your code against API2:2023 - Broken Authenticat
 ### Manual Use
 1. Clone or download the repository to your local machine.
 2. Place the `Unsafe_Endpoint_Check` folder in the root directory of your application.
-3. Run the EnpointSafeGate.sh. The report will be generated in the root of the workspace with the title format "UnsafeEndpointCheck_Results_yyyymmdd_hhmmss.html". If an unsafe endpoint is detected, the process will be terminated with a failure.
+3. Run the MainUnsafeEndpointCheck.sh. The report will be generated in the root of the workspace with the title format "UnsafeEndpointCheck_Results_yyyymmdd_hhmmss.html". If an unsafe endpoint is detected, the process will be terminated with a failure.
 
 ### Integration with Automation Pipeline Servers (e.g., Jenkins)
 1. Ensure the `Unsafe_Endpoint_Check` folder is present in your automation pipeline server's workspace.
-2. Configure your automation pipeline to execute EnpointSafeGate.sh as part of the security check process.
+2. Configure your automation pipeline to execute MainUnsafeEndpointCheck.sh as part of the security check process.
 3. Follow the pipeline execution logs to monitor the progress of the security check.
 4. Review the detailed HTML report generated upon completion for a comprehensive analysis of endpoint security status. The report will be generated in the root of the workspace with the title format "UnsafeEndpointCheck_Results_yyyymmdd_hhmmss.html". If an unsafe endpoint is detected, the pipeline process will be terminated with a failure.
 
