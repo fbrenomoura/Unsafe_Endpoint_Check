@@ -43,6 +43,9 @@ The HTML report includes the following sections:
 - **Execution Environment**: Details about the system where the script was executed, including hostname and operating system.
 - **Timestamp**: Date and time of report generation.
 
+## Bypassing Endpoints
+If you need to bypass specific endpoints from being checked, you can configure the bypass list in the `bypass_endpoints.json` file located in the `Unsafe_Endpoint_Check` folder.
+
 ## Contribution
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 If you found this project useful, maybe [buy me a coffee!](https://ko-fi.com/fbrenomoura) ☕️ and follow me for more [LinkedIn](https://linkedin.com/in/fbrenomoura/).
