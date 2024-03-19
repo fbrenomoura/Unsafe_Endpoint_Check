@@ -2,6 +2,7 @@
 
 ## Overview
 `Unsafe Endpoint Check` is a security gate designed to assess the safety of endpoints within your application. Whether integrated into your pipeline (e.g., Jenkins, GitLab CI/CD, GitHub Actions, Atlassian Bamboo) or used manually, it provides a comprehensive evaluation of HTTP endpoints' security status. The script scans through Java, GO, JS, C/C++ (and more) project files files, identifies HTTP endpoints, verifies their authentication status, through HTTP response, and generates detailed HTML reports for analysis.
+Also this gate helps to protect your code against API2:2023 - Broken Authentication from the OWASP API Top 10.
 
 ## Features
 - **Endpoint Security Check**: Scan files (including .json, .java, .c, .cpp, .h, .hpp, .go, .js, .sql, .properties) for HTTP endpoints and assess their security status.
