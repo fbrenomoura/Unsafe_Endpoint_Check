@@ -5,7 +5,7 @@
 Also this gate helps to protect your code against API2:2023 - Broken Authentication from the OWASP API Top 10.
 
 ## Features
-- **Endpoint Security Check**: Scan files (including .json, .java, .c, .cpp, .h, .hpp, .go, .js, .sql, .properties) for HTTP endpoints and assess their security status.
+- **Endpoint Security Check**: Scan files (including .json, .java, .c, .cpp, .h, .hpp, .go, .js, .sql, .properties, .py) for HTTP endpoints and assess their security status.
 - **Authentication Verification**: Verify if endpoints require authentication and assess their accessibility.
 - **Bypass Configuration**: Support for bypassing specific endpoints via configuration.
 - **HTML Report Generation**: Detailed HTML report generation summarizing endpoint statuses.
