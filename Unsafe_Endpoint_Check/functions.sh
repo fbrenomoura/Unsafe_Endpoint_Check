@@ -42,8 +42,8 @@ check_file_permissions() {
 
 # Check if at least one file with listed extensions are found (except in the Unsafe_Endpoint_Check folder)
 check_required_files_existence() {
-    if ! find . \( -path "./Unsafe_Endpoint_Check" -prune \) -o \( -type f \( -name "*.java" -o -name "*.json" -o -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.go" -o -name "*.js" -o -name "*.sql" -o -name "*.properties" \) \) -print -quit | grep -q "."; then
-        echo "ERROR: No files found (.java, .json, .c, .cpp, .h, .hpp, .go, .js, .sql, .properties)" >&2
+    if ! find . \( -path "./Unsafe_Endpoint_Check" -prune \) -o \( -type f \( -name "*.java" -o -name "*.json" -o -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.go" -o -name "*.js" -o -name "*.sql" -o -name "*.properties" -o -name "*.py" \) \) -print -quit | grep -q "."; then
+        echo "ERROR: No files found (.java, .json, .c, .cpp, .h, .hpp, .go, .js, .sql, .properties, .py)" >&2
         exit 1
     fi
 }
@@ -125,7 +125,7 @@ find_endpoints() {
     local total_files
     local current_file=0
     
-    files=$(find . -type f \( -name "*.json" -o -name "*.java" -o -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.go" -o -name "*.js"-o -name "*.sql" -o -name "*.properties" \) -not -name "bypass_endpoints.json")
+    files=$(find . -type f \( -name "*.json" -o -name "*.java" -o -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" -o -name "*.go" -o -name "*.js"-o -name "*.sql" -o -name "*.properties" -o -name "*.py" \) -not -name "bypass_endpoints.json")
     total_files=$(echo "$files" | wc -l)
     
     while IFS= read -r file; do
