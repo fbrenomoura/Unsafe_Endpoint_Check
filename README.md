@@ -1,4 +1,4 @@
-# EndpointSafeGate
+# Unsafe Endpoint Check
 
 ## Overview
 `EndpointSafeGate` is a security gate designed to assess the safety of endpoints within your application. Whether integrated into your pipeline (e.g., Jenkins, GitLab CI/CD, GitHub Actions, Atlassian Bamboo) or used manually, it provides a comprehensive evaluation of HTTP endpoints' security status. The script scans through Java, GO, JS, C/C++ (and more) project files files, identifies HTTP endpoints, verifies their authentication status, throught HTTP response and generates detailed HTML reports for analysis.
