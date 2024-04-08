@@ -1,3 +1,4 @@
+### [EN]
 # Unsafe Endpoint Check
 
 ## Overview
@@ -52,3 +53,58 @@ If you found this project useful, maybe [buy me a coffee!](https://ko-fi.com/fbr
 
 ## License
 This project is licensed under the MIT License.
+
+### [PT-BR]
+# Unsafe Endpoint Check
+
+## Visão Geral
+`Unsafe Endpoint Check` é um portão de segurança projetado para avaliar a segurança dos endpoints dentro da sua aplicação. Seja integrado ao seu pipeline (por exemplo, Jenkins, GitLab CI/CD, GitHub Actions, Atlassian Bamboo) ou usado manualmente, ele fornece uma avaliação abrangente do status de segurança dos endpoints HTTP. O script percorre arquivos de projetos Java, GO, JS, C/C++ (e mais), identifica endpoints HTTP, verifica seu status de autenticação por meio da resposta HTTP e gera relatórios HTML detalhados para análise. Além disso, esse portão ajuda a proteger seu código contra a API2:2023 - Autenticação Quebrada do OWASP API Top 10.
+
+## Recursos
+- **Verificação de Segurança de Endpoints**: Escaneie arquivos (incluindo .json, .java, .c, .cpp, .h, .hpp, .go, .js, .sql, .properties, .py) para endpoints HTTP e avalie seu status de segurança.
+- **Verificação de Autenticação**: Verifique se os endpoints exigem autenticação e avalie sua acessibilidade.
+- **Configuração de Bypass**: Suporte para realizar bypass em endpoints específicos através de configuração.
+- **Geração de Relatório HTML**: Geração de relatório HTML detalhado que resume os status dos endpoints.
+
+## Pré-requisitos
+- `bash`: Garanta que o seu sistema suporta scripting Bash. O `Unsafe Endpoint Check` depende de scripts Bash para execução.
+- `curl`: Necessário para manipulação de solicitações HTTP.
+- Permissões de leitura e escrita.
+- Conexão com a Internet.
+- Certifique-se de que a pasta `Unsafe_Endpoint_Check` está presente no diretório raiz da sua aplicação.
+
+## Uso
+
+### Uso Manual
+1. Clone ou baixe o repositório para a sua máquina local.
+2. Coloque a pasta `Unsafe_Endpoint_Check` no diretório raiz da sua aplicação.
+3. Execute o `MainUnsafeEndpointCheck.sh`. O relatório será gerado no diretório raiz do espaço de trabalho com o formato de título "UnsafeEndpointCheck_Results_yyyymmdd_hhmmss.html". Se um endpoints inseguro for detectado, o processo será encerrado com falha.
+
+### Integração com Servidores de Automação de Pipeline (por exemplo, Jenkins)
+1. Garanta que a pasta `Unsafe_Endpoint_Check` esteja presente no espaço de trabalho do seu servidor de automação de pipeline.
+2. Configure o seu pipeline de automação para executar `MainUnsafeEndpointCheck.sh` como parte do processo de verificação de segurança.
+3. Siga os logs de execução do pipeline para monitorar o progresso da verificação de segurança.
+4. Analise o relatório HTML detalhado gerado ao término para uma análise abrangente do status de segurança dos endpoints. O relatório será gerado no diretório raiz do espaço de trabalho com o formato de título "UnsafeEndpointCheck_Results_yyyymmdd_hhmmss.html". Se um endpoint inseguro for detectado, o processo do pipeline será encerrado com falha.
+
+## Estrutura do Relatório
+O relatório HTML inclui as seguintes seções:
+- **Resultados**: Tabela detalhada que mostra o status do endpoint, URL, arquivo associado e resposta.
+  - **Status**: O status da verificação do endpoint (por exemplo, SEGURO, INSEGURO, BYPASS, INALCANÇÁVEL).
+  - **Endpoints**: A URL do endpoint sendo avaliado.
+  - **Arquivo**: O arquivo associado ao endpoint onde foi descoberto.
+  - **Resposta**: O código de resposta HTTP recebido do endpoint.
+- **Resumo dos Resultados**: Gráfico de pizza que resume os endpoints seguros, inseguros, "bypassados" e inalcançáveis.
+- **Legenda**: Explicação dos códigos de status e seus significados.
+- **Riscos de Endpoints com Autenticação Insegura**: Informações sobre os riscos de segurança associados aos endpoints inseguros.
+- **Ambiente de Execução**: Detalhes sobre o sistema onde o script foi executado, incluindo nome do host e sistema operacional.
+- **Timestamp**: Data e hora da geração do relatório.
+
+## Bypass de Endpoints
+Se você precisar realizar o bypass de endpoints específicos de serem verificados, pode configurar a lista de bypass no arquivo `bypass_endpoints.json` localizado na pasta `Unsafe_Endpoint_Check`.
+
+## Contribuição
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para abrir um problema ou enviar um pull request.
+Se achou este projeto útil, talvez queira [me comprar um café!](https://ko-fi.com/fbrenomoura) ☕️ e me seguir para mais [LinkedIn](https://linkedin.com/in/fbrenomoura/).
+
+## Licença
+Este projeto está licenciado sob a Licença MIT.
